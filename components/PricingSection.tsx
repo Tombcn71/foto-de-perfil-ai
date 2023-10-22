@@ -4,13 +4,12 @@ import { Button } from "./ui/button";
 export default function PricingSection() {
   return (
     <div className="w-full max-w-6xl mt-16 mb-16 p-8 rounded-lg space-y-8">
-      <h2 className="text-3xl font-bold text-center mb-8">Pricing</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">Precios</h2>
       <div className="flex flex-wrap justify-center lg:space-x-4 space-y-4 lg:space-y-0 items-stretch">
         {pricingOptions.map((option, index) => (
           <div
             key={index}
-            className={`flex flex-col border rounded-lg p-4 w-full lg:w-1/4 ${option.bgColor}`}
-          >
+            className={`flex flex-col border rounded-lg p-4 w-full lg:w-1/4 ${option.bgColor}`}>
             <div className="flex-grow space-y-4">
               <h3 className="text-2xl font-semibold text-center">
                 {option.title}
@@ -45,35 +44,29 @@ export default function PricingSection() {
 
 const pricingOptions = [
   {
-    title: "Starter",
-    price: "1 Credit",
+    title: "Inicial",
+    price: "1 Crédito",
     description:
-      "Perfect for individuals looking to enhance their online presence.",
-    features: [
-      "4 AI Headshots",
-    ],
-    buttonText: "Choose Starter",
+      "Perfecto para personas que buscan mejorar su presencia en línea.",
+    features: ["4 AI Fotografias"],
+    buttonText: "elegir Starter",
     bgColor: "bg-white",
   },
   {
-    title: "Basic",
-    price: "3 Credits",
+    title: "Básico",
+    price: "3 Créditos",
     description:
-      "Ideal for professionals requiring frequent updates to their profiles.",
-    features: [
-      "12 AI Headshots",
-    ],
-    buttonText: "Choose Basic",
+      "Ideal para profesionales que requieren actualizaciones frecuentes de sus perfiles.",
+    features: ["12 AI Fotografias"],
+    buttonText: "Elegir Basic",
     bgColor: "bg-blue-50",
   },
   {
     title: "Premium",
-    price: "5 Credits",
-    description: "The best value with unlimited possibilities.",
-    features: [
-      "20 AI Headshots",
-    ],
-    buttonText: "Choose Premium",
+    price: "5 Créditos",
+    description: "El mejor valor con posibilidades ilimitadas.",
+    features: ["20 AI Fotografias"],
+    buttonText: "Elegir Premium",
     bgColor: "bg-white",
   },
 ];
