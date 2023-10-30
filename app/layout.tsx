@@ -12,13 +12,7 @@ export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
       <head>
-        {" "}
-        <link
-          rel="icon"
-          href="/  
-      favicon.ico"
-          sizes="any"
-        />{" "}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="min-h-screen flex flex-col">
         <section>
