@@ -65,11 +65,11 @@ export default async function Navbar() {
       {user && (
         <div className="hidden lg:flex flex-row gap-2">
           <Link href="/overview">
-            <Button variant={"ghost"}>Home</Button>
+            <Button variant={"ghost"}>Inicio</Button>
           </Link>
           {stripeIsConfigured && (
             <Link href="/get-credits">
-              <Button variant={"ghost"}>Get Credits</Button>
+              <Button variant={"ghost"}>Obtener créditos</Button>
             </Link>
           )}
         </div>
