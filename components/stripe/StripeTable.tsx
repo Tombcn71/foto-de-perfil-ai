@@ -40,7 +40,7 @@ const StripePricingTable = ({ user }: Props) => {
     <div className="flex flex-1 flex-col w-full">
       <stripe-pricing-table
         pricing-table-id="prctbl_1O7hxwFHQxgFOGeCd1xD95Vb"
-        publishable-key="pk_test_51O5QeBFHQxgFOGeCekRJVvlS2Iu8uifm8wz32mSjLtW7moUctkVetNs7Sfj8za3ojE3Wa3E623tNbKdzEStWJ3O800gJ4al6Fe"></stripe-pricing-table>
+        publishable-key="pk_live_51O5QeBFHQxgFOGeCAf2jRzTU8BdbX8Ec3AwOZMeJFW89IlrzHuks9iFlvITh3ZArfZnofo8kxf0tBOU9kI02aGrV00cvwBdBYb"></stripe-pricing-table>
     </div>
   );
 };
