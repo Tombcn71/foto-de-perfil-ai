@@ -39,6 +39,7 @@ export async function POST(request: Request) {
   const sig = headersObj.get("stripe-signature");
 
   if (!stripeSecretKey) {
+    console.log("Missing stripeSecretKey ");
     return NextResponse.json(
       {
         message: `Missing stripeSecretKey`,
@@ -53,6 +54,8 @@ export async function POST(request: Request) {
   });
 
   if (!sig) {
+    console.log("Missing Signature ");
+
     return NextResponse.json(
       {
         message: `Missing signature`,
@@ -62,6 +65,8 @@ export async function POST(request: Request) {
   }
 
   if (!request.body) {
+    console.log("Missing body ");
+
     return NextResponse.json(
       {
         message: `Missing body`,
