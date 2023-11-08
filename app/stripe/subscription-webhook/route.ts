@@ -41,9 +41,9 @@ export async function POST(request: Request) {
   if (!stripeSecretKey) {
     return NextResponse.json(
       {
-        message: "error",
+        message: `Missing stripeSecretKey`,
       },
-      { status: 400, statusText: `Missing stripeSecretKey` }
+      { status: 400 }
     );
   }
 
@@ -55,18 +55,18 @@ export async function POST(request: Request) {
   if (!sig) {
     return NextResponse.json(
       {
-        message: "error",
+        message: `Missing signature`,
       },
-      { status: 400, statusText: `Missing signature` }
+      { status: 400 }
     );
   }
 
   if (!request.body) {
     return NextResponse.json(
       {
-        message: "error",
+        message: `Missing body`,
       },
-      { status: 400, statusText: `Missing body` }
+      { status: 400 }
     );
   }
 
@@ -81,9 +81,9 @@ export async function POST(request: Request) {
     console.log("Error verifying webhook signature: " + error.message);
     return NextResponse.json(
       {
-        message: "error",
+        message: `Webhook Error: ${error?.message}`,
       },
-      { status: 400, statusText: `Webhook Error: ${error?.message}` }
+      { status: 400 }
     );
   }
 
@@ -109,9 +109,9 @@ export async function POST(request: Request) {
       if (!userId) {
         return NextResponse.json(
           {
-            message: "error",
+            message: `Missing client_reference_id`,
           },
-          { status: 400, statusText: `Missing client_reference_id` }
+          { status: 400 }
         );
       }
 
@@ -150,11 +150,10 @@ export async function POST(request: Request) {
           console.log(error);
           return NextResponse.json(
             {
-              message: "error",
+              message: `Error updating credits: ${error}\n ${data}`,
             },
             {
               status: 400,
-              statusText: `Error updating credits: ${error}\n ${data}`,
             }
           );
         }
@@ -163,7 +162,7 @@ export async function POST(request: Request) {
           {
             message: "success",
           },
-          { status: 200, statusText: "Success" }
+          { status: 200 }
         );
       } else {
         // Else create new credits row.
@@ -176,11 +175,10 @@ export async function POST(request: Request) {
           console.log(error);
           return NextResponse.json(
             {
-              message: "error",
+              message: `Error creating credits: ${error}\n ${data}`,
             },
             {
               status: 400,
-              statusText: `Error creating credits: ${error}\n ${data}`,
             }
           );
         }
@@ -190,15 +188,15 @@ export async function POST(request: Request) {
         {
           message: "success",
         },
-        { status: 200, statusText: "Success" }
+        { status: 200 }
       );
 
     default:
       return NextResponse.json(
         {
-          message: "error",
+          message: `Unhandled event type ${event.type}`,
         },
-        { status: 400, statusText: `Unhandled event type ${event.type}` }
+        { status: 400 }
       );
   }
 }
